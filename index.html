@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        background: #fafafa;
+        overflow-x: hidden;
+      }
+
+      #add{
+        --width: 10em;
+
+        position: fixed;
+        top: 0;
+        border: none;
+        background: #d0cbd4;
+        padding: 1vh;
+        margin-top: 3vh;
+        text-transform: uppercase;
+        font-weight: bold;
+        transform: translateX(calc(var(--width) / 2 * -1));
+        left: 50vw;
+        width: var(--width);
+      }
+
+      .container {
+        margin: 15em auto;
+        width: 50vw;
+      }
+
+      .item {
+        height: 4.5em;
+        background: #00d1b2;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        user-select: none;
+        cursor: move;
+      }
+
+      .item:not(:last-child) {
+        border-bottom: 1px solid #444;
+      }
+
+      .item.is-dragging {
+        box-shadow: 0 0 10px;
+        position: relative;
+        z-index: 999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="add">Add item</button>
+    <div class="container">
+      <div class="listing"></div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+
+</html>
